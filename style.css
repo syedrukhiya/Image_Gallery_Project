@@ -1,0 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;/*the box remaining after giving paddind n border n content block will be small*/ 
+   }
+   #wrapper{
+       height: 100vh;
+       overflow-x:hidden;
+       overflow-y:auto;
+       
+   }
+   .container{
+       height:100;
+       max-width:1200px;/*what every content we r giving in block it will go upto 1200 size thats it but it wil not extent more than that value then over flow will occur*/
+       margin:0 auto;/*left and right side margin will be place bcoz to keep the content in middle */
+       padding:20px;/*the space btw boader and content is called padding*/
+   }
+   .container h1{
+       margin:20px 0;
+       text-align:center;
+       margin-bottom:20px;
+       font-size:3rem;
+   }
+   .gallery{
+       display:flex;
+       flex-wrap:wrap;/*all elements come one by one without this all element are in one after one */ 
+       justify-content: space-between;
+   }
+   .card{
+       width:32%;
+       position:relative;
+       margin-bottom:20px;
+       border-radius:10px;/*for making corners to round shape*/
+       overflow:hidden;
+   }
+   .card img{
+       height:100%;
+       width:100%;
+       filter:grayscale(100%);
+       box-shadow: 0 0 20px #333;
+       object-fit:cover;/* how much area is their that will be fill by streching the image*/
+   }
+   .card:hover{
+       transform:scale(1.03);
+       filter:drop-shadow(0 0 10px #333);
+       transition:0.5s;
+       box-shadow:0 0 10px #333;
+   }
+   .card:hover img{
+       filter:grayscale(0%)/*if we want image color again*/
+   
+   }
+   .card figcaption{
+       position:absolute;
+       bottom:0;
+       left:0;
+       padding:25px;
+       width:100%;
+       height:20%;
+       font-size:16px;
+       font-weight:500;
+       color: #fff;
+       opacity:0;/*transperency zero(matlab dekhe ga hi nahi*/
+       border-radius: 0 0 10px 10px;
+       background:linear-gradient(0deg ,rgba(0,0,0,0.5) 0% rgba(255,255,255));
+       transition: 0.3s;
+   }
+   .card:hover figcaption {
+       opacity:1;
+       transform:scale(1.03);
+   }
